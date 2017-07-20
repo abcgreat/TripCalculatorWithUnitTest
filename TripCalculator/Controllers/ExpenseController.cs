@@ -65,6 +65,7 @@ namespace TripCalculator.Controllers
                 int theLastIndex = sortedExpense.Count - 1;
                 decimal checkBalance = 0;
 
+                // This is a part to calculate
                 while (passBalanceCheck == false)
                 {
                     if (sortedExpense[index].BalanceAfterPayingBack < 0)
@@ -102,6 +103,13 @@ namespace TripCalculator.Controllers
 
         }
 
+        /// <summary>
+        /// Function to calculate and calls itself recursively
+        /// </summary>
+        /// <param name="indexForward"></param>
+        /// <param name="indexBackward"></param>
+        /// <param name="sortedExpense"></param>
+        /// <param name="friends"></param>
         private void PayOthers(int indexForward, int indexBackward, List<Expense> sortedExpense, IDictionary<int, string> friends)
         {
             if (sortedExpense[indexForward].BackPayments is null)
@@ -143,6 +151,12 @@ namespace TripCalculator.Controllers
             }
         }
         
+        /// <summary>
+        /// Calculates balance of each record
+        /// </summary>
+        /// <param name="calculatedExpense"></param>
+        /// <param name="averageExpense"></param>
+        /// <param name="totalBalance"></param>
         private void SetEachBalance(List<Expense> calculatedExpense, decimal averageExpense, decimal totalBalance)
         {
             foreach (Expense eachExpense in calculatedExpense)
@@ -171,6 +185,12 @@ namespace TripCalculator.Controllers
             }
         }
 
+        /// <summary>
+        /// Calculate how much was spent during the trips
+        /// </summary>
+        /// <param name="calculatedExpense"></param>
+        /// <param name="friends"></param>
+        /// <returns></returns>
         private decimal GetTotalExpense(List<Expense> calculatedExpense, IDictionary<int, string> friends)
         {
             decimal totalExpense = 0;

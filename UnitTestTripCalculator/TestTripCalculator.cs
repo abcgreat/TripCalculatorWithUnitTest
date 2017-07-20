@@ -1,11 +1,8 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Net;
-using TripCalculator.Models;
-using System.Threading.Tasks;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using TripCalculator.Models;
 
 namespace UnitTestTripCalculator
 {
@@ -198,33 +195,121 @@ namespace UnitTestTripCalculator
 ]
          */
 
+
+        static System.Net.Http.HttpClient client = new System.Net.Http.HttpClient();
+        
         [TestMethod]
-        public void WebApiIsReady()
+        public void TestGetDefaultRecords()
         {
+            List<Expense> expenses = GetSampleRecords();
 
+            //Read
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:63118/");
+                var response = client.GetStringAsync("expense").Result;
 
-            //HttpResponseMessage response = await client.GetAsync(path);
-            //if (response.IsSuccessStatusCode)
-            //{
-            //    expenses = await response.Content.ReadAsAsync<Expense>();
-            //}
-            //return expenses;
+                Assert.IsTrue(response.Contains(":null,"));
 
+                Assert.IsTrue(response.Contains("balanceAfterPayingBack\":0.0"));
 
-            //var client = new HttpClient(); // no HttpServer
+                Assert.IsTrue(response.Contains("howToPayAtTheEnd\":null"));
 
-            //var request = new HttpRequestMessage
-            //{
-            //    RequestUri = new Uri("http://localhost:63118/expense"),
-            //    Method = HttpMethod.Get
-            //};
+                Assert.IsFalse(response.Contains("balanceAfterPayingBack\":0.01,"));
 
-            //request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-            //using (var response = client.SendAsync(request).Result)
-            //{
-            //    Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
-            //}
+            }            
         }
+
+        [TestMethod]
+        public void TestPostMethod()
+        {
+            List<Expense> expenses = GetSampleRecords();
+
+            // Post
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:63118/");
+                var response = client.PostAsJsonAsync("expense", expenses).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseString = response.Content.ReadAsStringAsync().Result;
+
+                    Assert.IsTrue(responseString.Contains("Friend1 pays $13.34 to Friend3.Friend1 pays $3.33 to Friend2."));
+
+                    Assert.IsTrue(responseString.Contains("Friend1 pays $3.33 to you."));
+
+                    Assert.IsTrue(responseString.Contains("Friend1 pays $13.34 to you."));
+
+                    Assert.IsTrue(responseString.Contains("balanceAfterPayingBack\":0.01,"));
+                }
+            }
+
+            // Put is the same as Post
+            // Keep this for future reference
+            //using (var client = new HttpClient())
+            //{
+            //    client.BaseAddress = new Uri("http://localhost:63118/");
+            //    var response = client.PutAsJsonAsync("expense", expenses).Result;
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        string responseString = response.Content.ReadAsStringAsync().Result;
+            //    }
+            //}
+
+            //Delete Call
+            //using (var client = new HttpClient())
+            //{
+            //    client.BaseAddress = new Uri("http://localhost:63118/");
+            //    var response = client.DeleteAsync("expense/1").Result;
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        string responseString = response.Content.ReadAsStringAsync().Result;
+            //    }
+            //}
+
+        }
+
+        internal List<Expense> GetSampleRecords()
+        {
+            List<Expense> expenses = new List<Expense>();
+
+            var newExpense1 = new Expense();
+            newExpense1.Id = 1;
+            newExpense1.Name = "Friend1";
+
+            var payment1 = new Payment();
+            payment1.Amount = 10;
+
+            var payments1 = new List<Payment>();
+            payments1.Add(payment1);
+            newExpense1.Payments = payments1;
+            //
+
+            var newExpense2 = new Expense();
+            newExpense2.Id = 2;
+            newExpense2.Name = "Friend2";
+
+            var payment2 = new Payment();
+            payment2.Amount = 30;
+
+            var payments2 = new List<Payment>();
+            payments2.Add(payment2);
+            newExpense2.Payments = payments2;
+            //
+
+            var newExpense3 = new Expense();
+            newExpense3.Id = 3;
+            newExpense3.Name = "Friend3";
+
+            var payment3 = new Payment();
+            payment3.Amount = 40;
+
+            var payments3 = new List<Payment>();
+            payments3.Add(payment3);
+            newExpense3.Payments = payments3;
+
+            return expenses;
+        }
+        
     }
 }

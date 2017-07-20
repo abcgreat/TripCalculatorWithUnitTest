@@ -10751,15 +10751,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Abcgreat\\.nuget\\packages\\": {}
+    "C:\\Users\\jxa1303.DOH\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Abcgreat\\Documents\\Visual Studio 2017\\Projects\\TripCalculator\\TripCalculator\\TripCalculator.csproj",
+      "projectUniqueName": "\\\\doh\\user\\FR\\jxa1303\\Documents\\Visual Studio 2017\\Projects\\TripCalculator_020\\TripCalculator\\TripCalculator\\TripCalculator.csproj",
       "projectName": "TripCalculator",
-      "projectPath": "C:\\Users\\Abcgreat\\Documents\\Visual Studio 2017\\Projects\\TripCalculator\\TripCalculator\\TripCalculator.csproj",
-      "outputPath": "C:\\Users\\Abcgreat\\Documents\\Visual Studio 2017\\Projects\\TripCalculator\\TripCalculator\\obj\\",
+      "projectPath": "\\\\doh\\user\\FR\\jxa1303\\Documents\\Visual Studio 2017\\Projects\\TripCalculator_020\\TripCalculator\\TripCalculator\\TripCalculator.csproj",
+      "outputPath": "\\\\doh\\user\\FR\\jxa1303\\Documents\\Visual Studio 2017\\Projects\\TripCalculator_020\\TripCalculator\\TripCalculator\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

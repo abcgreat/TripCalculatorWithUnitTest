@@ -16,3 +16,12 @@ C:\Users\Abcgreat\Documents\Visual Studio 2017\Projects\TripCalculator_009\TripC
 C:\Users\Abcgreat\Documents\Visual Studio 2017\Projects\TripCalculator_009\TripCalculator\TripCalculator\obj\Debug\netcoreapp1.1\TripCalculator.AssemblyInfo.cs
 C:\Users\Abcgreat\Documents\Visual Studio 2017\Projects\TripCalculator_009\TripCalculator\TripCalculator\obj\Debug\netcoreapp1.1\TripCalculator.dll
 C:\Users\Abcgreat\Documents\Visual Studio 2017\Projects\TripCalculator_009\TripCalculator\TripCalculator\obj\Debug\netcoreapp1.1\TripCalculator.pdb
+\\doh\user\FR\jxa1303\Documents\Visual Studio 2017\Projects\TripCalculator_020\TripCalculator\TripCalculator\bin\Debug\netcoreapp1.1\TripCalculator.deps.json
+\\doh\user\FR\jxa1303\Documents\Visual Studio 2017\Projects\TripCalculator_020\TripCalculator\TripCalculator\bin\Debug\netcoreapp1.1\TripCalculator.runtimeconfig.json
+\\doh\user\FR\jxa1303\Documents\Visual Studio 2017\Projects\TripCalculator_020\TripCalculator\TripCalculator\bin\Debug\netcoreapp1.1\TripCalculator.runtimeconfig.dev.json
+\\doh\user\FR\jxa1303\Documents\Visual Studio 2017\Projects\TripCalculator_020\TripCalculator\TripCalculator\bin\Debug\netcoreapp1.1\TripCalculator.dll
+\\doh\user\FR\jxa1303\Documents\Visual Studio 2017\Projects\TripCalculator_020\TripCalculator\TripCalculator\bin\Debug\netcoreapp1.1\TripCalculator.pdb
+\\doh\user\FR\jxa1303\Documents\Visual Studio 2017\Projects\TripCalculator_020\TripCalculator\TripCalculator\obj\Debug\netcoreapp1.1\TripCalculator.csprojResolveAssemblyReference.cache
+\\doh\user\FR\jxa1303\Documents\Visual Studio 2017\Projects\TripCalculator_020\TripCalculator\TripCalculator\obj\Debug\netcoreapp1.1\TripCalculator.AssemblyInfo.cs
+\\doh\user\FR\jxa1303\Documents\Visual Studio 2017\Projects\TripCalculator_020\TripCalculator\TripCalculator\obj\Debug\netcoreapp1.1\TripCalculator.dll
+\\doh\user\FR\jxa1303\Documents\Visual Studio 2017\Projects\TripCalculator_020\TripCalculator\TripCalculator\obj\Debug\netcoreapp1.1\TripCalculator.pdb
